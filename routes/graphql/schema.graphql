@@ -1,0 +1,11 @@
+#import post.graphql
+#import user.graphql
+
+type Query{
+    login: User @auth
+    posts: [Post!]! @all(model: "App\\Post")
+    post(id: Int! @eq): Post @find(model: "App\\Post")
+    users: [User!]! @all(model: "App\\User")
+    user(id: ID @eq): User @find(model: "App\\User")
+    userByName(name: String! @eq): User @first(model: "App\\User")
+}

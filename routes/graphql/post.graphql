@@ -1,0 +1,9 @@
+type Post {
+    id: ID!
+    user_id: String!
+    title: String!
+    content: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+    user: User @belongsTo
+}
